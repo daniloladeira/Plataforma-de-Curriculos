@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 160, 245, 1) 0%,
+    rgba(0, 95, 209, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+}
+
+h1,
+h2 {
+  padding: 0;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+}
+
+.container-principal {
+  position: relative;
+  background: #efefef;
+  margin: 0 auto;
+  transform: translateY(100%);
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  max-width: 1440px;
+  border-radius: 10px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    border-right: 1px solid #C3C3C3;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid #C3C3C3;
+}
+
+.ugtsic-logo {
+    transition: transform 0.3s;
+}
+
+.ugtsic-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.nav-item {
+    display: flex;
+    gap: 0.5rem;
+    padding: 10px 15px;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-item a {
+    font-family: 'Montserrat', Helvetica;
+    font-weight: 500;
+    color: #343741;
+    font-size: 1.1rem;
+}
+
+.nav-item img {
+    font-size: 1rem;
+}
+
+.nav-item:hover {
+    background-color: #dbdbdb;
+    border-radius: 3px;
+}
+
+.main-header {
+    display: flex;
+    height: 100px;
+    border-bottom: 1px solid #C3C3C3;
+    align-items: center;
+}
+
+.main-header h1 {
+    font-family: 'Montserrat', Helvetica;
+    font-weight: 700;
+    color: #343741;
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+.cvbuilder {
+}
