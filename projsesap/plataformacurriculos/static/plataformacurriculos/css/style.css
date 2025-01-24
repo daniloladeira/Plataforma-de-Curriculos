@@ -1,11 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 160, 245, 1) 0%,
-    rgba(0, 95, 209, 1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 160, 245, 1) 0%,
+      rgba(0, 95, 209, 1) 100%);
   width: 100vw;
   height: 100vh;
   font-family: 'Montserrat', Helvetica;
@@ -24,11 +22,22 @@ a {
   padding: 0;
 }
 
+:root {
+  --input-padding: 16px 17px;
+  --input-width: 100%;
+  --input-border-radius: 7px;
+  --input-box-sizing: border-box;
+  --input-margin-top: 5px;
+  --input-border: 1px solid #ccc;
+  --input-background: #f0f0f0;
+  --input-font-size: 16px;
+}
+
 .container-principal {
   position: relative;
   background: #efefef;
   margin: 0 auto;
-  transform: translateY(100%);
+  transform: translateY(15%);
   display: grid;
   grid-template-columns: 245px 1fr;
   grid-template-rows: auto 1fr;
@@ -106,18 +115,20 @@ a {
 .form-title h2 {
   color: #343741;
   font-size: 1.3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 
 .info-pessoal-form input {
-  padding: 16px 17px;
-  width: 100%;
-  border-radius: 7px;
-  box-sizing: border-box;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  background: #f0f0f0;
-  font-size: 16px;
+  padding: var(--input-padding);
+  width: var(--input-width);
+  border-radius: var(--input-border-radius);
+  box-sizing: var(--input-box-sizing);
+  margin-top: var(--input-margin-top);
+  border: var(--input-border);
+  background: var(--input-background);
+  font-size: var(--input-font-size);
   position: relative;
 }
 
@@ -125,7 +136,7 @@ a {
   font-family: 'Montserrat', Helvetica;
   color: #a9a9a9;
   font-size: rem;
-  
+
 }
 
 .info-pessoal-form label {
@@ -139,5 +150,65 @@ a {
 .form-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
+.main-container-forms {
+  margin: 1.6rem 20rem auto 1.9rem;
+}
+
+.radio-form-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-form-group label {
+  font-size: 1.2rem;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  /* Aumenta o tamanho em 50% */
+}
+
+.form-container textarea {
+  padding: var(--input-padding);
+  width: var(--input-width);
+  border-radius: var(--input-border-radius);
+  box-sizing: var(--input-box-sizing);
+  margin-top: var(--input-margin-top);
+  border: var(--input-border);
+  background: var(--input-background);
+  font-size: var(--input-font-size);
+  position: relative;
+}
+
+.form-container input {
+  padding: var(--input-padding);
+  width: var(--input-width);
+  border-radius: var(--input-border-radius);
+  box-sizing: var(--input-box-sizing);
+  margin-top: var(--input-margin-top);
+  border: var(--input-border);
+  background: var(--input-background);
+  font-size: var(--input-font-size);
+  position: relative;
+}
+
+
+.upload-input {
+  grid-template-columns: 1fr;
+  height: max-content;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  place-self: center;
+}
