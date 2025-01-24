@@ -8,6 +8,7 @@ body {
   );
   width: 100vw;
   height: 100vh;
+  font-family: 'Montserrat', Helvetica;
 }
 
 h1,
@@ -29,77 +30,114 @@ a {
   margin: 0 auto;
   transform: translateY(100%);
   display: grid;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 245px 1fr;
+  grid-template-rows: auto 1fr;
   max-width: 1440px;
   border-radius: 10px;
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 230px;
-    border-right: 1px solid #C3C3C3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 245px;
+  border-right: 1px solid #c3c3c3;
 }
 
 .sidebar-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    border-bottom: 1px solid #C3C3C3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #c3c3c3;
 }
 
 .ugtsic-logo {
-    transition: transform 0.3s;
+  transition: transform 0.3s;
 }
 
 .ugtsic-logo:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-    cursor: pointer;
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  cursor: pointer;
 }
 
 .nav-item {
-    display: flex;
-    gap: 0.5rem;
-    padding: 10px 15px;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  display: flex;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .nav-item a {
-    font-family: 'Montserrat', Helvetica;
-    font-weight: 500;
-    color: #343741;
-    font-size: 1.1rem;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #343741;
+  font-size: 1.1rem;
 }
 
 .nav-item img {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .nav-item:hover {
-    background-color: #dbdbdb;
-    border-radius: 3px;
+  background-color: #dbdbdb;
+  border-radius: 3px;
 }
 
 .main-header {
-    display: flex;
-    height: 100px;
-    border-bottom: 1px solid #C3C3C3;
-    align-items: center;
+  display: flex;
+  height: 100px;
+  border-bottom: 1px solid #c3c3c3;
+  align-items: center;
 }
 
 .main-header h1 {
-    font-family: 'Montserrat', Helvetica;
-    font-weight: 700;
-    color: #343741;
-    font-size: 1.5rem;
-    margin-left: 20px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 700;
+  color: #343741;
+  font-size: 1.5rem;
+  margin-left: 30px;
 }
 
-.cvbuilder {
+.form-title h2 {
+  color: #343741;
+  font-size: 1.3rem;
 }
+
+
+.info-pessoal-form input {
+  padding: 16px 17px;
+  width: 100%;
+  border-radius: 7px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  font-size: 16px;
+  position: relative;
+}
+
+::placeholder {
+  font-family: 'Montserrat', Helvetica;
+  color: #a9a9a9;
+  font-size: rem;
+  
+}
+
+.info-pessoal-form label {
+  display: block;
+}
+
+.form-group label {
+  font-size: 1.2rem;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+

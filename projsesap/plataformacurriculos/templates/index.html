@@ -1,50 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../static/plataformacurriculos/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-</head>
+    <link
+      rel="stylesheet"
+      href="../static/plataformacurriculos/css/style.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container-principal">
-        <aside class="sidebar">
-            <header class="sidebar-header">
-                <div class="ugtsic-logo"><img src="../static/plataformacurriculos/imgs/ugtsic_logo.png" alt="Logo">
-                </div>
-            </header>
-
-            <nav>
-                <ul>
-                    <div class="nav-item">
-                        <img src="../static/plataformacurriculos/imgs/caneta_e_papel.svg" alt="caneta e papel">
-                        <li><a href="#cvbuilder">CV Builder</a></li>
-                    </div>
-
-                    <div class="nav-item">
-                        <img src="../static/plataformacurriculos/imgs/pilha_de_forms.svg" alt="Documentos empilhados">
-                        <li><a href="#bancodecv">Banco de CV</a></li>
-                    </div>
-                </ul>
-            </nav>
-
-        </aside>
-
-        <header class="main-header">
-            <div class="header-content">
-                <h1>Cadastro de Currículos</h1>
-            </div>
+      <aside class="sidebar">
+        <header class="sidebar-header">
+          <div class="ugtsic-logo">
+            <img
+              src="../static/plataformacurriculos/imgs/ugtsic_logo.png"
+              alt="Logo"
+            />
+          </div>
         </header>
 
-        <section class="cvbuilder">
-            <div class="informacoes-pessoais">
-                <h3 id="cvbuilder">CV Builder</h2>
+        <nav>
+          <ul>
+            <div class="nav-item">
+              <img
+                src="../static/plataformacurriculos/imgs/caneta_e_papel.svg"
+                alt="caneta e papel"
+              />
+              <li><a href="#cvbuilder">Currículos</a></li>
             </div>
-        </section>
-    </div>
-</body>
 
+            <div class="nav-item">
+              <img
+                src="../static/plataformacurriculos/imgs/pilha_de_forms.svg"
+                alt="Documentos empilhados"
+              />
+              <li><a href="#bancodecv">Banco de cv.</a></li>
+            </div>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main-container">
+        <header class="main-header">
+          <div class="header-content">
+            <h1>Cadastro de Currículos</h1>
+          </div>
+        </header>
+
+        <div class="main-container-forms">
+          <div class="form-title">
+            <h2>Informações Pessoais</h2>
+          </div>
+
+          <div class="info-pessoal-form">
+            <form class="form-container">
+              <div class="form-group">
+                <label for="primeironome">Primeiro nome</label>
+                <input
+                  type="text"
+                  placeholder="Insira o seu primeiro nome"
+                  id="primeironome"
+                  name="primeironome"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="ultimonome">Último nome</label>
+                <input
+                  type="text"
+                  placeholder="Insira o seu último nome"
+                  id="ultimonome"
+                  name="ultimonome"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input
+                  type="text"
+                  placeholder="exemplo@gmail.com"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Número de telefone</label>
+                <input
+                  type="text"
+                  placeholder="(  ) ____-____"
+                  id="telefone"
+                  name="telefone"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+
+          <div class="formacao-form">
+            <div class="form-title">
+              <h2>Formação</h2>
+            </div>
+            <form class="form-container">
+              <div class="form-group">
+                <div>
+                  <input type="radio" id="ensinomedio" name="formacao" value="ensimomedio" required>
+                </div>
+                <div>
+                  <input type="radio" id="graduacao" name="formacao" value="graduacao" required>
+                </div>
+                <div>
+                  <input type="radio" id="mestrado" name="formacao" value="mestrado" required>
+                </div>
+                <div>
+                  <input type="radio" id="doutorado" name="formacao" value="formacao" required>
+                </div>
+                
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
