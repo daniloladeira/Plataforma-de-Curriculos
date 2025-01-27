@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banco de Currículos</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'plataformacurriculos/css/style.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container-principal">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <div class="ugtsic-logo">
+          <img src="{% static 'plataformacurriculos/imgs/ugtsic_logo.png' %}" alt="Logo" />
+        </div>
+      </header>
+
+      <nav>
+        <ul>
+          <div class="nav-item">
+            <img src="{% static 'plataformacurriculos/imgs/caneta_e_papel.svg' %}" alt="caneta e papel" />
+            <li><a href="{% url 'plataformacurriculos:curriculo' %}">Currículos</a></li>
+          </div>
+
+          <div class="nav-item">
+            <img src="{% static 'plataformacurriculos/imgs/pilha_de_forms.svg' %}" alt="Documentos empilhados" />
+            <li><a href="{% url 'plataformacurriculos:banco_de_cv' %}">Banco de CV</a></li>
+          </div>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="main-container">
+      <header class="main-header">
+        <div class="header-content">
+          <h1>Banco de Currículos</h1>
+        </div>
+      </header>
+
+      <div class="main-container-cards">
+        {% for curriculo in curriculos %}
+        <div class="card">
+          <div class="card-content">
+            <h2>{{ curriculo.primeironome }} {{ curriculo.ultimonome }}</h2>
+            <p><strong>Cargo Desejado:</strong> {{ curriculo.cargodesejado }}</p>
+            <p><strong>E-mail:</strong> <a href="mailto:{{ curriculo.email }}">{{ curriculo.email }}</a></p>
+            <p><strong>Telefone:</strong> {{ curriculo.mascara_telefone }}</p>
+          </div>
+          <div class="card-actions">
+            <a href="{{ curriculo.curriculo.url }}" download class="btn">Baixar Currículo</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

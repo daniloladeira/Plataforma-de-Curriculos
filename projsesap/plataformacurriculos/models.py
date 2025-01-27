@@ -57,18 +57,17 @@ class CurriculoForm(forms.ModelForm):
             'curriculo': forms.ClearableFileInput(attrs={'placeholder': 'Carregar o Currículo'})
         }
 
-def clean_curriculo(self):
+    def clean_curriculo(self):
         curriculo = self.cleaned_data.get('curriculo')
-        if not curriculo:
-            raise ValidationError("O envio do currículo é obrigatório.")
-        
-        # Verifica se o arquivo enviado é um PDF
-        if not curriculo.name.endswith('.pdf'):
-            raise ValidationError("Somente arquivos PDF são permitidos.")
-        
-        # Verifica o tamanho máximo do arquivo (opcional, exemplo: 5 MB)
-        max_size = 5 * 1024 * 1024  # 5 MB em bytes
-        if curriculo.size > max_size:
-            raise ValidationError("O arquivo enviado excede o tamanho máximo permitido de 5 MB.")
-        
+
+        # Verificar extensões permitidas
+        extensoes_permitidas = ['.doc', '.docx', '.pdf']
+        if not any(curriculo.name.endswith(ext) for ext in extensoes_permitidas):
+            raise ValidationError("Somente arquivos .doc, .docx ou .pdf são permitidos.")
+
+        # Verificar tamanho máximo do arquivo
+        max_tamanho = 1 * 1024 * 1024  # 1 MB
+        if curriculo.size > max_tamanho:
+            raise ValidationError("O tamanho máximo permitido para o arquivo é de 1 MB.")
+
         return curriculo

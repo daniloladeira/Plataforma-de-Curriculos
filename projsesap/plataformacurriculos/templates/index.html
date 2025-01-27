@@ -23,12 +23,12 @@
         <ul>
           <div class="nav-item">
             <img src="{% static 'plataformacurriculos/imgs/caneta_e_papel.svg' %}" alt="caneta e papel" />
-            <li><a href="#cvbuilder">Currículos</a></li>
+            <li><a href="{% url 'plataformacurriculos:curriculo' %}">Currículos</a></li>
           </div>
 
           <div class="nav-item">
             <img src="{% static 'plataformacurriculos/imgs/pilha_de_forms.svg' %}" alt="Documentos empilhados" />
-            <li><a href="#bancodecv">Banco de cv.</a></li>
+            <li><a href="{% url 'plataformacurriculos:banco_de_cv' %}">Banco de cv.</a></li>
           </div>
         </ul>
       </nav>
@@ -102,15 +102,16 @@
           <div class="curriculo-upload-form">
             <div class="form-group upload-form">
               {{ form.curriculo }}
-              <input class="upload-input" type="file" id="curriculo" name="curriculo" required />
               <div class="upload-text">
                 <p>Clique no ícone para fazer upload do seu currículo</p>
               </div>
             </div>
           </div>
+
           <div class="submit-btn">
             <button type="submit">Enviar currículo</button>
           </div>
+
         </form>
       </div>
     </div>

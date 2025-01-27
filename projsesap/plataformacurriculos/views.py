@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import CurriculoForm
+from .models import CurriculoForm, Curriculo
 
 # Create your views here.
 
@@ -13,3 +13,7 @@ def curriculo_view(request):
     else:
         form = CurriculoForm()
     return render(request, 'index.html', {'form': form})
+
+def banco_de_cv(request):
+    curriculos = Curriculo.objects.all()
+    return render(request, 'banco_de_cv.html', {'curriculos': curriculos})

@@ -28,6 +28,10 @@ SECRET_KEY = 'django-insecure-(p*a4=_i_+x0i*u6=l)sy131(v#&u!qtch7uu77b3r#*2ci9x5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+]
+
 ALLOWED_HOSTS = []
 
 
@@ -121,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static\plataformacurriculos'),
+    os.path.join(BASE_DIR, 'static/plataformacurriculos'),
 ]
 
 # Default primary key field type

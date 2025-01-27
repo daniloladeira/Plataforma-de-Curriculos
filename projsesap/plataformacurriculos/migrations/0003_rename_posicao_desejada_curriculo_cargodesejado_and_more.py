@@ -22,13 +22,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='curriculo',
             name='primeironome',
-            field=models.CharField(default='Nome Padrão', max_length=100, verbose_name='Primeiro Nome'),
+            field=models.CharField(default='Danilo', max_length=100, verbose_name='Primeiro Nome'),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='curriculo',
             name='ultimonome',
-            field=models.CharField(default='Nome Padrão', max_length=100, verbose_name='Último Nome'),
+            field=models.CharField(default='Ladeira', max_length=100, verbose_name='Último Nome'),
             preserve_default=False,
         ),
         migrations.AlterField(
