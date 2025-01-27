@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import curriculo_view
 app_name = 'plataformacurriculos'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', curriculo_view, name='curriculo'),
 ]

@@ -1,12 +1,12 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
   background: linear-gradient(180deg,
       rgba(0, 160, 245, 1) 0%,
       rgba(0, 95, 209, 1) 100%);
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: 'Montserrat', Helvetica;
+  overflow-x: hidden;
 }
 
 h1,
@@ -23,7 +23,7 @@ a {
 }
 
 :root {
-  --input-padding: 16px 17px;
+  --input-padding: 10px 17px;
   --input-width: 100%;
   --input-border-radius: 7px;
   --input-box-sizing: border-box;
@@ -37,12 +37,13 @@ a {
   position: relative;
   background: #efefef;
   margin: 0 auto;
-  transform: translateY(15%);
+  transform: translateY(1%);
   display: grid;
   grid-template-columns: 245px 1fr;
   grid-template-rows: auto 1fr;
   max-width: 1440px;
   border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .sidebar {
@@ -119,6 +120,18 @@ a {
   margin-top: 2rem;
 }
 
+.main-form {
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.info-pessoal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 
 .info-pessoal-form input {
   padding: var(--input-padding);
@@ -162,6 +175,12 @@ a {
   gap: 1rem;
 }
 
+.radio-form-group div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .radio-form-group label {
   font-size: 1.2rem;
 }
@@ -180,7 +199,45 @@ input[type="radio"] {
   border: var(--input-border);
   background: var(--input-background);
   font-size: var(--input-font-size);
+  resize: none;
   position: relative;
+}
+
+.cargo-form input {
+  padding: var(--input-padding);
+  width: 50%;
+  border-radius: var(--input-border-radius);
+  box-sizing: var(--input-box-sizing);
+  margin-top: var(--input-margin-top);
+  border: var(--input-border);
+  background: var(--input-background);
+  font-size: var(--input-font-size);
+  position: relative;
+}
+
+.cargo-form label {
+  display: block;
+}
+
+.cargo-form textarea {
+  padding: var(--input-padding);
+  width: 50%;
+  border-radius: var(--input-border-radius);
+  box-sizing: var(--input-box-sizing);
+  margin-top: var(--input-margin-top);
+  border: var(--input-border);
+  background: var(--input-background);
+  font-size: var(--input-font-size);
+  resize: none;
+  position: relative;
+}
+
+.form-group input:focus {
+  outline: 1px solid#2745a8;
+}
+
+.form-group textarea:focus {
+  outline: 1px solid#4f4de9;
 }
 
 .form-container input {
@@ -195,20 +252,42 @@ input[type="radio"] {
   position: relative;
 }
 
-
-.upload-input {
-  grid-template-columns: 1fr;
-  height: max-content;
+.form-container input:focus {
+  outline: 1px solid#9a9da7;
 }
 
 .submit-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.curriculo-upload-form {
+  border: 2px dashed #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  
+}
+
+.curriculo-upload-form p {
+  font-size: 1.2rem;
+  color: #343741;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-btn button {
   padding: 10px 20px;
   background: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1.2rem;
   margin-top: 1rem;
-  place-self: center;
+  place-self: end;
 }
