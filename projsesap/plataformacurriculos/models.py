@@ -29,6 +29,7 @@ class Curriculo(models.Model):
         upload_to="projsesap/plataformacurriculos/curriculos", 
         verbose_name="Carregar o Currículo"
     )
+    data_envio = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.primeironome} {self.ultimonome}"

@@ -46,10 +46,11 @@
         <div class="card">
           <div class="card-content">
             <h2>{{ curriculo.primeironome }} {{ curriculo.ultimonome }}</h2>
-            <p></strong> {{ curriculo.cargodesejado }}</p>
-            <p></strong> <a href="mailto:{{ curriculo.email }}">{{ curriculo.email }}</a></p>
-            <p></strong> {{ curriculo.mascara_telefone }}</p>
-            <p></strong> {{ client_ip }}</p>
+            <p>{{ curriculo.cargodesejado }}</p>
+            <p><a href="mailto:{{ curriculo.email }}">{{ curriculo.email }}</a></p>
+            <p>{{ curriculo.mascara_telefone }}</p>
+            <p>{{ client_ip }}</p>
+            <p>Data de envio: {{ curriculo.data_envio }}</p>
           </div>
           <div class="card-actions">
             <a class="btn-link" href="{{ curriculo.curriculo.url }}" download class="btn"><i><img src="{% static 'plataformacurriculos/imgs/download_icon.png' %}"></i>Baixar Currículo</a>
