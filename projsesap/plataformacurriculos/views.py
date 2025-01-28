@@ -2,16 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Curriculo
 from .forms import CurriculoForm
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from django.core.mail import send_mail
-from django.utils import timezone
 from django.conf import settings
 
 # Create your views here.
-
-
 def curriculo_view(request):
     if request.method == 'POST':
         form = CurriculoForm(request.POST, request.FILES)
@@ -32,18 +26,28 @@ def banco_de_cv(request):
 
 def send_email(curriculo):
     subject = "Novo Currículo Recebido"
-    message = f"Um novo currículo foi enviado por {curriculo.nome}.\n\nDetalhes:\nNome: {curriculo.nome}\nEmail: {curriculo.email}\nTelefone: {curriculo.telefone}\n\nVerifique o sistema para mais informações."
+    message = f"""
+    Um novo currículo foi enviado por {curriculo.primeironome}.
+    
+    Detalhes:
+    Nome: {curriculo.primeironome}
+    Email: {curriculo.email}
+    Telefone: {curriculo.mascara_telefone}
+    Cargo Desejado: {curriculo.cargodesejado}
+    Escolaridade: {curriculo.get_escolaridade_display()}
+    Observações: {curriculo.observacoes}
+    
+    Verifique o sistema para mais informações.
+    """.strip()
+
     from_email = settings.DEFAULT_FROM_EMAIL
-    recipient_list = [settings.ADMIN_EMAIL]
-
-    send_mail(
-        subject,
-        message,
-        from_email,
-        recipient_list,
-        fail_silently=False,
-    )
-
+    recipient_list = ['daniloladeira20@gmail.com']
+    
+    try:
+        send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+    except Exception as e:
+        print(f"Erro ao enviar e-mail: {e}")
+        
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
