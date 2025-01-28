@@ -1,0 +1,126 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 160, 245, 1) 0%,
+    rgba(0, 95, 209, 1) 100%
+  );
+  height: 100%;
+  font-family: "Montserrat", Helvetica;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+}
+
+:root {
+  --input-padding: 10px 17px;
+  --input-width: 100%;
+  --input-border-radius: 7px;
+  --input-box-sizing: border-box;
+  --input-margin-top: 5px;
+  --input-border: 1px solid #ccc;
+  --input-background: #f0f0f0;
+  --input-font-size: 16px;
+}
+
+.container-principal {
+  position: relative;
+  background: #efefef;
+  margin: 0 auto;
+  transform: translateY(1%);
+  display: grid;
+  grid-template-columns: 245px 1fr;
+  grid-template-rows: auto 1fr;
+  max-width: 1440px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 245px;
+  border-right: 1px solid #c3c3c3;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.ugtsic-logo {
+  transition: transform 0.3s;
+}
+
+.ugtsic-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.nav-item {
+  display: flex;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-item a {
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #343741;
+  font-size: 1.1rem;
+}
+
+.nav-item img {
+  font-size: 1rem;
+}
+
+.nav-item:hover {
+  background-color: #dbdbdb;
+  border-radius: 3px;
+}
+
+.main-header {
+  display: flex;
+  height: 100px;
+  border-bottom: 1px solid #c3c3c3;
+  align-items: center;
+}
+
+.main-header h1 {
+  font-family: "Montserrat", Helvetica;
+  font-weight: 700;
+  color: #343741;
+  font-size: 1.5rem;
+  margin-left: 30px;
+}
+
+.form-title h2 {
+  color: #343741;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
